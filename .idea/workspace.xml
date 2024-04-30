@@ -5,32 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1faaef38-92cd-482e-8258-e5ca46f53322" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Job.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Requirements.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database/aerich.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database/migrations/models/init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database/models/patient.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database/models/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/constant.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/mail.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/security.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/patients.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/users.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/health365-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/health365-backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/patients.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/patients.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +113,7 @@
       <workItem from="1714476810402" duration="1179000" />
       <workItem from="1714478159998" duration="2000" />
       <workItem from="1714478494824" duration="7348000" />
-      <workItem from="1714486907017" duration="10365000" />
+      <workItem from="1714486907017" duration="10618000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -147,7 +123,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714397836552</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1714497294514</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714497294514</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1714497300005</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714497300005</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

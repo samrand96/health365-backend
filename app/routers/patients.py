@@ -64,14 +64,16 @@ async def update_patient(patient_id: int, patient: Patient_Pydantic, user=Depend
 
 @router.post("/patients/{patient_id}/assign-doctor/{doctor_id}", dependencies=[Depends(has_permission(["admin","doctor"]))], response_model=Patient_Pydantic)
 async def assign_doctor(patient_id: int, doctor_id: int, user=Depends(has_permission(["admin", "doctor"]))):
-    if user['is_admin']:
-        patient_obj = await Patient.get(id=patient_id)
-    else:
-        patient_obj = await Patient.get(Q(doctor_id=user['id']) & Q(id=patient_id))
-    if patient_obj:
-        patient_obj.doctor_id = doctor_id
-        await patient_obj.save()
-        return await Patient_Pydantic.from_tortoise_orm(patient_obj)
-    else:
-        raise HTTPException(status_code=404, detail="Patient not found")
+    try:
+        if user['is_admin']:
+            patient_obj = await Patient.get(id=patient_id)
+        else:
+            patient_obj = await Patient.get(Q(doctor_id=user['id']) & Q(id=patient_id))
+        if patient_obj:
+            patient_obj.doctor_id = doctor_id
+            await patient_obj.save()
+            return await Patient_Pydantic.from_tortoise_orm(patient_obj)
+    except Exception as e:
+        raise HTTPException(status_code=404, detail="Either doctor or patient not found or your don't have permission "
+                                                    "to operate the following action")
 
