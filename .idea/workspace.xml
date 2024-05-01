@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1faaef38-92cd-482e-8258-e5ca46f53322" name="Changes" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/app/database/models/notification.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routers/websocket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/models/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/models/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/security.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/patients.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/patients.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +121,8 @@
       <workItem from="1714476810402" duration="1179000" />
       <workItem from="1714478159998" duration="2000" />
       <workItem from="1714478494824" duration="7348000" />
-      <workItem from="1714486907017" duration="10618000" />
+      <workItem from="1714486907017" duration="10982000" />
+      <workItem from="1714498841672" duration="4994000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -139,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714497300005</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1714497848295</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714497848295</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,18 +177,8 @@
     <MESSAGE value="Initial Commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/health365_backend$health365_backend.coverage" NAME="health365-backend Coverage Results" MODIFIED="1714453557836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backend$health365_backend.coverage" NAME="health365-backend Coverage Results" MODIFIED="1714495524131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backend$health365_backend.coverage" NAME="health365-backend Coverage Results" MODIFIED="1714497902345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

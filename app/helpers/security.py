@@ -1,6 +1,7 @@
 import copy, uuid, jwt
+import enum
 from datetime import datetime
-from app.database.models.user import User, User_Pydantic, UserToken
+from app.database.models.user import User, User_Pydantic, UserToken, UserRole
 from fastapi import Depends, HTTPException, status
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordBearer
@@ -64,15 +65,23 @@ def verify_token(token: str):
         raise HTTPException(status_code=403, detail=str(e))
 
 
+
 def has_permission(required_roles: list):
     def role_checker(token: str = Depends(oauth2_scheme)):
         payload = verify_token(token)
         user_role =payload.get('role')
         user_id: int = payload.get("id")
-        role: str = payload.get("role")
-        is_admin: bool = True if role == 'admin' else False
+        user_role_str: str = payload.get("role")
+
+        try:
+            user_role = UserRole[user_role_str]
+        except KeyError:
+            raise HTTPException(status_code=403, detail="Invalid user role")
+
+        is_doctor: bool = user_role == UserRole.DOCTOR
+
         if user_role not in required_roles:
             raise HTTPException(status_code=403, detail="Insufficient permissions")
-        return {"id": user_id, "role": role, "is_admin": is_admin, "token_payload": payload}
+        return {"id": user_id, "role": user_role, "is_doctor": is_doctor, "token_payload": payload}
 
     return role_checker

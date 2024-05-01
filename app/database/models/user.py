@@ -1,24 +1,24 @@
+import enum
 from tortoise import fields
 from tortoise.models import Model
 from tortoise.contrib.pydantic import pydantic_model_creator
 from passlib.hash import bcrypt
 
 
+class UserRole(enum.Enum):
+    SECRETARY = 'secretary'
+    DOCTOR = 'doctor'
+    LABORATORY = 'laboratory'
+
+
 class User(Model):
     id = fields.IntField(pk=True)
-    first_name = fields.CharField(max_length=50)
-    last_name = fields.CharField(max_length=50)
     email = fields.CharField(max_length=50, unique=True)
     password_hash = fields.CharField(max_length=128, null=False)
-    mobile_number = fields.CharField(max_length=13, unique=True)
-    status = fields.CharField(max_length=50)
-    is_active = fields.BooleanField(null=True, default=False)
-    role = fields.CharField(max_length=50)
+    role = fields.CharEnumField(UserRole, null=False)
+
     def verify_password(self, password):
         return bcrypt.verify(password, self.password_hash)
-
-    def is_admin(self):
-        return self.role == 'admin'
 
 
 User_Pydantic = pydantic_model_creator(User, name='User')
