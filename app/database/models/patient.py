@@ -29,11 +29,13 @@ class MedicalRecord(Model):
 MedicalRecord_Pydantic = pydantic_model_creator(MedicalRecord, name='MedicalRecord')
 MedicalRecordIn_Pydantic = pydantic_model_creator(MedicalRecord, name='MedicalRecordIn', exclude_readonly=True)
 
+
 class PatientDoctor(Model):
+
     id = fields.IntField(pk=True)
     patient = fields.ForeignKeyField('models.Patient', related_name='patient_doctors')
     doctor = fields.ForeignKeyField('models.User', related_name='patient_doctors')
 
+
 PatientDoctor_Pydantic = pydantic_model_creator(PatientDoctor, name='PatientDoctor')
 PatientDoctorIn_Pydantic = pydantic_model_creator(PatientDoctor, name='PatientDoctorIn', exclude_readonly=True)
-

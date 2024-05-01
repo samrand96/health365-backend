@@ -6,6 +6,17 @@ SENDGRID_CLIENT = SendGridAPIClient(SENDGRID_API_KEY)
 
 
 def send_mail(to_email, subject, html_content):
+    """
+        Sends an email message to the specified email address with the given subject and HTML content.
+
+        Parameters:
+            - to_email (str): The email address to send the email to.
+            - subject (str): The subject of the email.
+            - html_content (str): The HTML content/body of the email.
+
+        Returns:
+            - The response from sending the email.
+    """
     message = Mail(
         from_email=FROM_EMAIL,
         to_emails=to_email,

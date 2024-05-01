@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1faaef38-92cd-482e-8258-e5ca46f53322" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/app/database/models/notification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/websocket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routers/doctors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/database/models/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/models/patient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/mail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/security.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/patients.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/patients.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/utilities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +123,7 @@
       <workItem from="1714478159998" duration="2000" />
       <workItem from="1714478494824" duration="7348000" />
       <workItem from="1714486907017" duration="10982000" />
-      <workItem from="1714498841672" duration="4994000" />
+      <workItem from="1714498841672" duration="7365000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -156,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714497848295</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1714542849907</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714542849907</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

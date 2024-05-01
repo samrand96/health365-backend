@@ -49,16 +49,43 @@ async def get_users(user: UserIn_Pydantic = Depends(get_current_user)):
 
 @router.get('/users/me', response_model=User_Pydantic)
 async def get_session_user(user: User_Pydantic = Depends(get_current_user)):
+    """
+        Retrieves the current user's information.
+        Parameter:
+            - user: User_Pydantic - the current user retrieved using 'get_current_user' function.
+        Returns:
+            - User_Pydantic: The Pydantic model object representing the current user.
+    """
     return user
 
 
 @router.get('/users/{user_id}', response_model=User_Pydantic)
-async def get_user(user_id: int,user: UserIn_Pydantic = Depends(get_current_user)):
+async def get_user(user_id: int, user: UserIn_Pydantic = Depends(get_current_user)):
+    """
+        Retrieves a single user from the database based on the provided user_id.
+
+        Parameters:
+            - user_id: int - the unique identifier of the user to retrieve.
+            - user: UserIn_Pydantic - the current user retrieved using 'get_current_user' function.
+
+        Returns:
+            - User_Pydantic: The Pydantic model object representing the requested user.
+    """
     return await User_Pydantic.from_queryset_single(User.get(id=user_id))
 
 
 @router.put('/users/{user_id}', response_model=User_Pydantic)
 async def update_user(user_id: int, user: UserIn_Pydantic = Depends(get_current_user)):
+    """
+        Updates a user's information in the database.
+
+        Parameters:
+            - user_id: int - the unique identifier of the user to update.
+            - user: UserIn_Pydantic - the user object containing the updated information.
+
+        Returns:
+            - User_Pydantic: The Pydantic model object representing the updated user.
+    """
     user.password_hash = bcrypt.hash(user.password_hash)
     await User.get(id=user_id).update(**user.dict(exclude_unset=True))
     return await User_Pydantic.from_queryset_single(User.get(id=user_id))
@@ -66,12 +93,31 @@ async def update_user(user_id: int, user: UserIn_Pydantic = Depends(get_current_
 
 @router.delete('/users/{user_id}')
 async def delete_user(user_id: int, user: UserIn_Pydantic = Depends(get_current_user)):
+    """
+        Deletes a user from the database based on the provided user_id.
+
+        Parameters:
+            - user_id: int - the unique identifier of the user to delete.
+            - user: UserIn_Pydantic - the current user retrieved using 'get_current_user' function.
+
+        Returns:
+            - dict: An empty dictionary.
+    """
     await User.filter(id=user_id).delete()
     return {}
 
 
 @router.post('/token')
 async def generate_token(form_data: OAuth2PasswordRequestForm = Depends()):
+    """
+        Generates an access token for the user based on the provided OAuth2PasswordRequestForm data.
+
+        Parameters:
+            - form_data: OAuth2PasswordRequestForm - the form data containing the user's username and password.
+
+        Returns:
+            - dict: A dictionary containing the generated access token and token type.
+    """
     user = await authenticate_user(form_data.username, form_data.password)
     if not user:
         raise HTTPException(
@@ -85,6 +131,15 @@ async def generate_token(form_data: OAuth2PasswordRequestForm = Depends()):
 
 @router.post('/forgot-password')
 async def forgot_password(email: str):
+    """
+        Handles the forgot password functionality by sending a password reset token to the user's email.
+
+        Parameters:
+            - email (str): The email address of the user requesting a password reset.
+
+        Returns:
+            - None
+    """
     user = await User.get(email=email)
     if user is None:
         raise HTTPException(status_code=404, detail="User not found")
@@ -102,6 +157,19 @@ async def forgot_password(email: str):
 
 @router.post("/reset-password")
 async def reset_password(reset_token: str, password: str, confirmed_password: str):
+    """
+        Handles the reset password functionality by validating the reset token, checking password match,
+        updating the user's password hash, and returning the user details as a Pydantic model if successful.
+
+        Parameters:
+            - reset_token (str): The token used to reset the password.
+            - password (str): The new password to set.
+            - confirmed_password (str): The confirmation of the new password.
+
+        Returns:
+            - dict or JSONResponse: A dictionary with user details in Pydantic model format if successful,
+              otherwise a JSONResponse with the result of the token validation.
+    """
     result = await validate_token(reset_token)
     if result['status_code'] == 200 and password == confirmed_password:
         await User.get(id=result['user']).update(password_hash=bcrypt.hash(password))
